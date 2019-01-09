@@ -1,0 +1,8 @@
+.topNav {
+  position: fixed;
+  width: 100%;
+  text-align: left;
+  padding: 0 30px;
+  background-color: #282c34;
+  color: #fff;
+}
