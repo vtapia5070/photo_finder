@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import * as api from './api';
+
 import './App.css';
 
 class App extends Component {
+  componentDidMount () {
+    api.searchPhotosByQuery('trees')
+    .then(res => {
+      console.log('res:', res);
+    })
+    .catch(err => {
+      console.log('error:', err);
+    });
+  }
+
   render() {
     return (
       <div className="App">
