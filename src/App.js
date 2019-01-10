@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TopNav from './Components/TopNav/TopNav';
-import Card from './Components/Card/Card';
-
+import Search from './Search/Search';
 import * as api from './api';
 
 import './App.css';
@@ -23,11 +22,7 @@ class App extends Component {
         <header className="App-header">
           <TopNav />
         </header>
-        <section>
-          <Card>
-            <input />
-          </Card>
-        </section>
+        <Search />
       </div>
     );
   }
