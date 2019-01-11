@@ -10,13 +10,14 @@ import './Search.css';
 class Search extends Component {
   constructor () {
     super();
+    
     this.state = {
       value: ''
     };
   }
 
   handleSearch = (event) => {
-    // TODO
+    this.props.handleSearch(this.state.value);
   }
 
   handleChange = (event) => {
@@ -33,9 +34,14 @@ class Search extends Component {
             onChange={this.handleChange}
             value={this.state.value}
             label="Search"
-            endAdornment={
+            endadornment={
               <InputAdornment position="end">
-                <IconButton color="primary" aria-label="Search" onClick={this.handleSearch}>
+                <IconButton 
+                  color="primary" 
+                  aria-label="Search" 
+                  onClick={this.handleSearch}
+                  disabled={this.state.value === ''}
+                >
                   <Icon><SearchIcon /></Icon>
                 </IconButton>
               </InputAdornment>
