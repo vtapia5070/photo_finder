@@ -69,7 +69,7 @@ class App extends Component {
         </header>
         <Search 
           handleSearch={this.searchByQuery} 
-          active={!!this.state.searchResults.length}
+          isCollapsed={!!this.state.searchResults.length}
         />
       </div>
     );

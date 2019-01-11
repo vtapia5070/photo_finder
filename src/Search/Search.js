@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import { Search as SearchIcon } from '@material-ui/icons'
@@ -10,7 +11,7 @@ import './Search.css';
 class Search extends Component {
   constructor () {
     super();
-    
+
     this.state = {
       value: ''
     };
@@ -28,7 +29,7 @@ class Search extends Component {
 
   render () {
     return (
-      <div className="wrapper">
+      <div className={classnames('wrapper', { collapsed: this.props.isCollapsed })}>
         <div className="searchContainer">
           <TextInput
             onChange={this.handleChange}

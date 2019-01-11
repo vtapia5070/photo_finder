@@ -4,6 +4,11 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+  transition: height 2s;
+}
+
+.wrapper.collapsed {
+  height: 40%;
 }
 
 .searchContainer {
