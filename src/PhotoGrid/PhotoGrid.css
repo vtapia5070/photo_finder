@@ -1,0 +1,11 @@
+.photoGridContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.photo img {
+  align-self: center;
+  flex: 0 0 auto;
+}

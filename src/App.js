@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TopNav from './Components/TopNav/TopNav';
 import Search from './Search/Search';
+import PhotoGrid from './PhotoGrid/PhotoGrid';
 import * as api from './api';
 
 import './App.css';
@@ -71,6 +72,11 @@ class App extends Component {
           handleSearch={this.searchByQuery} 
           isCollapsed={!!this.state.searchResults.length}
         />
+        {
+          this.state.searchResults.length > 0 && (
+            <PhotoGrid photos={this.state.searchResults} />
+          )
+        }
       </div>
     );
   }
