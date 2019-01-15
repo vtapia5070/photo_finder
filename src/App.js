@@ -19,24 +19,6 @@ class App extends Component {
     };
   }
 
-  // componentDidMount () {
-  //   api.searchPhotosByQuery('trees')
-  //     .then(res => {
-  //       console.log('res:', res);
-  //       this.setState({
-  //         request: {
-  //           success: true,
-  //           pending: false,
-  //           failure: false
-  //         },
-  //         searchResults: [],
-  //       });
-  //     })
-  //     .catch(err => {
-  //       console.log('error:', err);
-  //     });
-  // }
-
   searchByQuery = (query) => {
     this.setState({
       request: {
