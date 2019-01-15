@@ -40,8 +40,8 @@ class App extends Component {
   searchByQuery = (query) => {
     this.setState({
       request: {
-        pending: true,
         ...this.state.request,
+        pending: true,
       },
       ...this.state
     });

@@ -36,12 +36,13 @@ class Search extends Component {
             value={this.state.value}
             label="Search"
             endadornment={
-              <InputAdornment position="end">
+              <InputAdornment position="end" role="button">
                 <IconButton 
                   color="primary" 
                   aria-label="Search" 
                   onClick={this.handleSearch}
                   disabled={this.state.value === ''}
+                  role="button"
                 >
                   <Icon><SearchIcon /></Icon>
                 </IconButton>

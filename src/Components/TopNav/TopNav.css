@@ -6,4 +6,5 @@
   background-color: #282c34;
   color: #fff;
   top: 0;
+  z-index: 1;
 }

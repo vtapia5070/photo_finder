@@ -13,6 +13,10 @@ class PhotoGrid extends Component {
             <Card 
               key={`${photo.id}_${index}`}
               classes="photo"
+              overlay={{
+                description: photo.description,
+                name: `${photo.user.first_name} ${photo.user.last_name}`
+              }}
             >
               <img 
                 src={photo.urls.thumb} 
