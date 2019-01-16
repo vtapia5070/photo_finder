@@ -8,9 +8,9 @@ const routes = {
   search: '/search/photos',
 };
 
-export const searchPhotosByQuery = (query) => {
+export const searchPhotosByQuery = (query, page) => {
 
-  const url = `${baseUrl}${routes.search}?perPage=10&query=${query}`;
+  const url = `${baseUrl}${routes.search}?perPage=10&page=${page}&query=${query}`;
 
   return fetch(url, {
     headers: headers,

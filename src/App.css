@@ -3,3 +3,7 @@
   background-color: #e2e2e2;
   margin-top: 68px;
 }
+
+.photosContainer {
+  position: relative;
+}

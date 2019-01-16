@@ -1,0 +1,29 @@
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #50555e;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+}
+
+.number {
+  padding: 12px;
+}
+
+.number:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+
+.number.active {
+  color: #E55812;
+  font-weight: bold;
+}
+
+.ellipsis {
+  margin: 0px 10px;
+}
+

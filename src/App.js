@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TopNav from './Components/TopNav/TopNav';
 import Search from './Search/Search';
 import PhotoGrid from './PhotoGrid/PhotoGrid';
+import Pagination from './Pagination/Pagination';
 import * as api from './api';
 
 import './App.css';
@@ -15,20 +16,24 @@ class App extends Component {
         success: false,
         failure: false,
       },
+      currentPage: 1,
+      currentQuery: '',
       searchResults: [],
+      totalPages: 0
     };
   }
 
-  searchByQuery = (query) => {
+  searchByQuery = (query, page = this.state.currentPage) => {
     this.setState({
       request: {
-        ...this.state.request,
         pending: true,
+        success: false,
+        failure: false,
       },
       ...this.state
     });
 
-    api.searchPhotosByQuery(query)
+    api.searchPhotosByQuery(query, page)
       .then(res => {
         this.setState({
           request: {
@@ -37,11 +42,21 @@ class App extends Component {
             failure: false
           },
           searchResults: res.results,
+          currentQuery: query,
+          currentPage: page,
+          totalPages: res.total_pages
         })
       })
       .catch(err => {
         console.log('error:', err);
       });
+  }
+
+  handlePageChange = (pageNumber) => () => {
+    this.searchByQuery(this.state.currentQuery, pageNumber);
+    // TODO: use polyfill to animate smooth scrool 
+    // to top ofPhotoGrid container
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -56,7 +71,14 @@ class App extends Component {
         />
         {
           this.state.searchResults.length > 0 && (
-            <PhotoGrid photos={this.state.searchResults} />
+            <div className="photosContainer">
+              <PhotoGrid photos={this.state.searchResults} />
+              <Pagination 
+                currentPage={this.state.currentPage} 
+                totalPages={this.state.totalPages} 
+                handleClick={this.handlePageChange}
+              />
+            </div>
           )
         }
       </div>
