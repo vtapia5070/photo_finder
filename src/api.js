@@ -1,5 +1,6 @@
 const baseUrl = `https://api.unsplash.com`;
 const clientID = process.env.REACT_APP_CLIENT_ID;
+console.log('clientId:', process.env.REACT_APP_CLIENT_ID);
 const headers = new Headers({
   'Accept-Version': 'v1',
   'Authorization': `Client-ID ${clientID}`
